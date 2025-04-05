@@ -151,4 +151,4 @@ class Aurora3:
 
 test = Aurora3(df, sent_dic)
 res = test.get_df()
-print(df)
+print(res.head(10))
