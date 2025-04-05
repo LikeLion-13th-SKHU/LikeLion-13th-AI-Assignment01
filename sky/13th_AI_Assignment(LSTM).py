@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Embedding, LSTM, Dense
 from sklearn.model_selection import train_test_split
 
 # 1. text_data.txt 파일 불러오기
-data_path = "sky/text_data.txt"  # 텍스트 파일 경로
+data_path = "text_data.txt"  # 텍스트 파일 경로
 df = pd.read_csv(data_path, encoding='utf-8')  # 문장, label 컬럼 포함되어야 함
 
 # 2. 토큰화 및 시퀀스 처리
@@ -43,7 +43,8 @@ new_sentences = [
     "너무 행복하고 기분이 좋다.",
     "시험을 망쳐서 우울했다.",
     "산책이 상쾌했다.",
-    "이 영화는 너무 지루했다."
+    "이 영화는 너무 지루했다.",
+    "동아리 너무 많이 해서 힘들다"
 ]
 new_seq = tokenizer.texts_to_sequences(new_sentences)
 new_pad = pad_sequences(new_seq, maxlen=max_len, padding='post')

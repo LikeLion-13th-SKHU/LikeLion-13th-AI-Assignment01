@@ -136,8 +136,8 @@ class Aurora3:
         self.df['ratio'] = self.df.apply(get_ratio, axis=1)
 
 # 1. 텍스트 데이터 로드 
-df = pd.read_csv("text_data.txt", header=None, names=["sentence"])
-
+df = pd.read_csv("text_data.txt", header=None, names=["sentence", "label"])
+df =df[["sentence"]].copy()
 # 2. 감성사전 로드
 sent_dic = pd.read_csv("SentiWord_Dict.txt", sep="\t", header=None)
 sent_dic.columns = [0, 1]  # 기존 코드 호환을 위해 컬럼명 변경
